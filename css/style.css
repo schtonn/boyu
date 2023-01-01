@@ -1,0 +1,112 @@
+body {
+    font-family: 'Noto Serif SC', serif, 'Anonymous Pro', monospace;
+    background-color: floralwhite;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: bold;
+}
+
+@media screen {
+    body {
+        padding: 20px 5px 5px 5px;
+    }
+}
+
+@media screen and (min-width:699px) {
+    body {
+        padding: 20px 75px 40px 75px;
+    }
+
+    #fileOutput {
+        margin-right: 50px;
+    }
+
+    .table {
+        margin-left: 60px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    body {
+        padding: 20px 150px 40px 150px;
+    }
+
+    #fileOutput {
+        margin-right: 200px;
+    }
+
+    .table {
+        margin-left: 100px;
+    }
+}
+
+.table {
+    font-size: 14px;
+}
+
+.chart {
+    width: auto;
+    height: 400px;
+}
+
+.blurred {
+    transition-duration: 100ms;
+    filter: blur(2px);
+}
+
+.blurred:hover {
+    filter: none;
+}
+
+.btn:focus:active,
+.btn:focus {
+    outline: 0;
+}
+
+.btn-info:is(:not(:hover):focus, :active:focus, :active:hover:focus) {
+    outline: 5px dashed rgba(95, 177, 221, 0.5);
+}
+
+.btn-success:is(:not(:hover):focus, :active:focus, :active:hover:focus) {
+    outline: 5px dashed rgba(121, 184, 121, 0.5);
+}
+
+.btn-primary:is(:not(:hover):focus, :active:focus, :active:hover:focus) {
+    outline: 5px dashed rgba(46, 109, 164, 0.5);
+}
+
+.btn-warning:is(:not(:hover):focus, :active:focus, :active:hover:focus) {
+    outline: 5px dashed rgba(200, 157, 39, 0.5);
+}
+
+.btn-danger:is(:not(:hover):focus, :active:focus, :active:hover:focus) {
+    outline: 5px dashed rgba(234, 71, 71, 0.5);
+}
+
+.btn-info:is(:hover, :focus:hover) {
+    outline: 10px double rgba(95, 177, 221, 0.5);
+}
+
+.btn-success:is(:hover, :focus:hover) {
+    outline: 10px double rgba(121, 184, 121, 0.5);
+}
+
+.btn-primary:is(:hover, :focus:hover) {
+    outline: 10px double rgba(46, 109, 164, 0.5);
+}
+
+.btn-warning:is(:hover, :focus:hover) {
+    outline: 10px double rgba(200, 157, 39, 0.5);
+}
+
+.btn-danger:is(:hover, :focus:hover) {
+    outline: 10px double rgba(234, 71, 71, 0.5);
+}
+
+.btn {
+    transition-duration: 100ms;
+}
