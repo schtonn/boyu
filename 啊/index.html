@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<head>
+    
+    <script type="text/javascript" src="/js/jquery.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" crossorigin="anonymous">
+    <script type="text/javascript" src="/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.loli.net/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700
+&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            size: 1rem;
+            line-height: 1.45;
+        }
+
+        main {
+            font-family: 'Courier New', Courier, monospace;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            text-transform: uppercase;
+            animation: rotating 20s linear infinite;
+        }
+
+        .text span {
+            position: absolute;
+            transform-origin: bottom center;
+        }
+
+        @-moz-keyframes rotating {
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+        }
+
+        @-webkit-keyframes rotating {
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+        }
+
+        @-o-keyframes rotating {
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes rotating {
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="text">Boyu, you are incredibly handsome with a strong jawline and chiseled features.</div>
+        <div class="text">Your perfect, glossy black hair frames your face in a captivating way and adds to your ruggedly debonair style.</div>
+        <div class="text">Your alluring gaze is mesmerizing, and you have a presence that radiates strength and charisma.</div>
+    </main>
+    <script>
+        class roundText {
+            constructor(element, radius, letterSpace, startingDeg, speedRotation) {
+                this.el = element;
+                this.r = radius;
+                this.d = letterSpace;
+                this.s = startingDeg;
+                this.speedRotation = speedRotation;
+            }
+            generateRoundText() {
+                var string = this.el.textContent;
+                var lengthLetters = string.length;
+
+                string.split("");
+                this.el.innerHTML = "";
+
+                for (var i = 0; i < lengthLetters; i++) {
+                    this.el.innerHTML += "<span>" + string[i] + "</span>";
+                }
+
+                for (var i = 0; i < lengthLetters; i++) {
+                    var arrayLetters = this.el.childNodes;
+                    arrayLetters[i].style.height = this.r + "px";
+                    arrayLetters[i].style.transform = "translate(-50%, " + (-this.r) + "px) rotate(" + (this.s + (i * this.d)) + "deg)";
+                    this.el.style.transformOrigin = "center";
+                    this.el.style.animationDuration = this.speedRotation + "s";
+                }
+
+            }
+        }
+
+        let text1 = new roundText(document.querySelectorAll(".text")[0], 190, 4.6, -180, 85);
+        text1.generateRoundText();
+
+        let text2 = new roundText(document.querySelectorAll(".text")[1], 260, 3.2, -90, 60);
+        text2.generateRoundText();
+
+        let text3 = new roundText(document.querySelectorAll(".text")[2], 330, 2.6, 0, 40);
+        text3.generateRoundText();
+    </script>
+</body>
